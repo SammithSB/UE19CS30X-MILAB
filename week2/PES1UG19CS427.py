@@ -44,8 +44,10 @@ def A_star_Traversal(cost, heuristic, start_point, goals):
         if n in goals:
             return curr_path
         append_to_list(explored, n)
-        children = [i for i in range(len(cost[0]))
-                    if cost[n][i] not in [0, -1]]
+        children = []
+        for i in range(len(cost)):
+            if(cost[n][i] > 0):
+                children.append(i)
         for i in children:
             new_curr_path = curr_path + [i]
             new_path_cost = curr_cost + cost[n][i] + heuristic[i]
@@ -98,7 +100,7 @@ def DFS_Traversal(cost, start_point, goals):
         makkalu = []
         i = 0
         for i in range(i):
-            if(cost[node][i] not in [0, -1]):
+            if(cost[node][i] > 0):
                 makkalu.append(i)
         visited[node] = 1
         path.append(node)
