@@ -62,8 +62,8 @@ def A_star_Traversal(cost, heuristic, start_point, goals):
     return path
 
 
-def append_to_list(frontier, to_append):
-    frontier.append((to_append))
+def append_to_list(l1, to_append):
+    l1.append((to_append))
 
 
 def all_visited_child(cost, i, visited):
